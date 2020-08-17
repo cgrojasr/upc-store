@@ -17,6 +17,26 @@
   </li>
   <li *ngFor="let item of equipos; index as i">
     {{item}} {{i+1}}
-    <button (click)="eliminar(i)">Eliminar</button>
+    <button (click)="eliminar(i)" class="btn btn-primary">Eliminar</button>
   </li>
 </ul>
+
+<div *ngFor="let team of teams">
+  <div>
+    <h1>
+      {{team.name}}
+    </h1>
+  </div>
+  <img [src]="team.jersey" alt="">
+  {{team.country}}
+</div>
+
+<!--ngSwitch-->
+<div [ngSwitch]="title.toUpperCase()">
+  <p *ngSwitchCase="'Genaro'.toUpperCase()">Este es Genaro</p>
+  <p *ngSwitchCase="'Pedro'.toUpperCase()">Este es Pedro</p>
+  <p *ngSwitchCase="'Ramiro'.toUpperCase()">Este es Ramiro</p>
+  <p *ngSwitchDefault>No se encontro ningun caso</p>
+</div>
+
+<app-team></app-team>
